@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leonardo Fernandes | Desenvolvedor de Software</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        primary1: '#6F00FF',
+                        primary2: '#B600FF',
+                        neon: '#9B4DFF',
+                        light1: '#FFFFFF',
+                        light2: '#F8F9FA',
+                        light3: '#E9ECEF',
+                        darkText: '#212529'
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #6F00FF, #B600FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(45deg, #6F00FF, #B600FF);
+        }
+
+        .gradient-gray-bg {
+            background: linear-gradient(45deg, #e4e4e4, #999999);
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(111, 0, 255, 0.3);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(111, 0, 255, 0.2);
+        }
+
+        #particles-js {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body class="bg-light1 text-darkText relative overflow-x-hidden">
+
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+    <!-- NAVBAR -->
+    <header class="fixed w-full bg-light1/90 backdrop-blur-lg z-50 border-b border-light3" data-aos="fade-down">
+        <nav class="w-11/12 mx-auto py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-poppins font-extrabold gradient-text">Leonardo Fernandes</h1>
+
+            <ul class="hidden md:flex gap-8 text-darkText">
+                <li><a href="#about" class="hover:text-primary2 transition">Sobre</a></li>
+                <li><a href="#skills" class="hover:text-primary2 transition">Skills</a></li>
+                <li><a href="#projects" class="hover:text-primary2 transition">Projetos</a></li>
+                <li><a href="#contact" class="hover:text-primary2 transition">Contato</a></li>
+            </ul>
+
+            <a href="#contact" class="hidden md:block gradient-bg px-5 py-2 rounded-xl font-medium glow text-white">
+                Fale Comigo
+            </a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center justify-center text-center px-6 relative z-10" data-aos="zoom-in">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-poppins font-extrabold gradient-text typed"></h1>
+
+            <p class="text-xl text-gray-600 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="500">
+                Desenvolvedor de Software Full-Stack especializado em criar soluções digitais completas e escaláveis.
+                
+            </p>
+
+            <div class="mt-8 flex justify-center gap-6" data-aos="fade-up" data-aos-delay="1000">
+                <a href="#projects" class="gradient-bg px-8 py-3 rounded-xl font-medium glow hover:scale-105 transition-transform">
+                    Ver Projetos
+                </a>
+                <a href="#contact" class="border border-primary1 px-8 py-3 rounded-xl font-medium hover:bg-primary1/20 transition">
+                    Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="about" class="py-24 w-11/12 mx-auto relative z-10" data-aos="fade-up">
+        <h2 class="text-3xl font-poppins font-bold mb-6 gradient-text">Quem Sou</h2>
+
+        <p class="text-gray-700 max-w-3xl text-lg leading-relaxed">
+            Sou Leonardo, Desenvolvedor de Software com experiência na criação de sistemas completos e escaláveis. 
+            Trabalho diariamente com front-end, back-end, banco de dados, autenticação, dashboards, integrações com APIs, Bots de automações
+            e landing pages profissionais.
+            <br><br>
+            Tenho nível de inglês intermediário e estou sempre aprimorando minhas habilidades para entregar soluções 
+            que realmente resolvem problemas da maneira mais ágil e eficaz possível.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 w-11/12 mx-auto relative z-10" data-aos="fade-up">
+        <h2 class="text-3xl font-poppins font-bold mb-10 gradient-text">Skills</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary1 transition card-hover glow" data-aos="flip-left">
+                <h3 class="font-poppins font-semibold text-xl mb-4 flex items-center gap-2">
+                    <i class="fas fa-code text-primary1"></i> Front-end
+                </h3>
+                <ul class="text-gray-700 space-y-2">
+                    <li><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML</li>
+                    <li><i class="fab fa-css3-alt text-blue-500 mr-2"></i> CSS + TailwindCSS</li>
+                    <li><i class="fab fa-js-square text-yellow-500 mr-2"></i> JavaScript</li>
+                    <li><i class="fab fa-react text-cyan-500 mr-2"></i> React Native + Expo</li>
+                    <li>UI responsiva</li>
+                </ul>
+            </div>
+
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary1 transition card-hover glow" data-aos="flip-left" data-aos-delay="200">
+                <h3 class="font-poppins font-semibold text-xl mb-4 flex items-center gap-2">
+                    <i class="fas fa-server text-primary1"></i> Back-end
+                </h3>
+                <ul class="text-gray-700 space-y-2">
+                    <li><i class="fab fa-node-js text-green-500 mr-2"></i> Node.js</li>
+                    <li><i class="fab fa-python text-blue-500 mr-2"></i> Python</li>
+                    <li>Express</li>
+                    <li>APIs REST</li>
+                    <li>Autenticação JWT</li>
+                </ul>
+            </div>
+
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary1 transition card-hover glow" data-aos="flip-left" data-aos-delay="400">
+                <h3 class="font-poppins font-semibold text-xl mb-4 flex items-center gap-2">
+                    <i class="fas fa-database text-primary1"></i> Banco de Dados
+                </h3>
+                <ul class="text-gray-700 space-y-2">
+                    <li>MySQL</li>
+                    <li>SQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Consultas otimizadas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projects" class="py-24 w-11/12 mx-auto relative z-10" data-aos="fade-up">
+        <h2 class="text-3xl font-poppins font-bold mb-10 gradient-text">Projetos</h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+            <!-- CARD 1 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in">
+                <!-- <img src="image0.png" alt="Sistema de Agendamentos" class=" h-48 object-cover rounded-xl mb-4"> -->
+                <img src="image1.jpg" alt="" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Sistema de Agendamentos LSports</h3>
+                <p class="text-gray-600 mb-4">
+                    Sistema completo de reservas de quadras esportivas com autenticação, painel administrativo, dashboard financeiro e integração com PostgreSQL.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript, Node.js, Express, PostgreSQL, CSS3, TAILWIND, HTML5.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://lf-l-sports.vercel.app/" target="_blank" class="gradient-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </a>
+                    <a href="https://github.com/1leofernandes/LSports" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="lbarber.png" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">SaaS para Barbearias</h3>
+                <p class="text-gray-600 mb-4">
+                    SaaS focado em conversão, SEO e estética profissional para aumentar a efici~encia de barbearias. controle de clientes, lucros, agendamentos, planos mensais e etc
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript, Node.js, Express, MySQL, CSS3, HTML5, JWT.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://lbarber.vercel.app/login.html" target="_blank" class="gradient-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </a>
+                    <a href="https://github.com/1leofernandes/lbarber" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <!-- CARD 3 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="angiosperma.webp" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Landing Page</h3>
+                <p class="text-gray-600 mb-4">
+                    Apresentação sobre Ecologia Ambiental.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript, CSS3, HTML5.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://ecoambiental-nu.vercel.app/" target="_blank" class="gradient-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </a>
+                    <a href="https://github.com/1leofernandes/ecoambiental" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <!-- CARD 4 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="lfsoftware.png" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Landing Page</h3>
+                <p class="text-gray-600 mb-4">
+                    Landing page moderna com design focado em conversão, SEO e estética profissional.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript, TAILWINDCSS, CSS3, HTML5.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://lf-software.vercel.app/home.html" target="_blank" class="gradient-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </a>
+                    <a href="https://github.com/1leofernandes/LF-Software" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <!-- CARD 5 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="helpguincho.jpeg" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Aplicativo Mobile HelpGuincho</h3>
+                <p class="text-gray-600 mb-4">
+                    Aplicativo para serviços de guincho e assistência 24 horas com painel de histórico, web socket de corridas, cadastro de motoristas, maps e Waze integrados.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript, TypeScript, React, React Native, Axios, API REST, Node.JS.
+                </p>
+                <div class="flex gap-4">
+                    <button class="gradient-gray-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </button>
+                    <a href="https://github.com/1leofernandes/HelpGuinchoApp" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="tarefas.png" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Bot de extrair notas fiscais</h3>
+                <p class="text-gray-600 mb-4">
+                    Bot em Python para extrair notas fiscais eletrônicas de diferentes modelos em JSON para automatizar processos contábeis e financeiros.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: Python, Selenium, Pandas, Spacy Models, JSON, .venv.
+                </p>
+                <div class="flex gap-4">
+                    <button class="gradient-gray-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </button>
+                    <a href="https://github.com/1leofernandes/Invoicebot" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <!-- CARD 7 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="leads.jpg" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">API para receber Leads</h3>
+                <p class="text-gray-600 mb-4">
+                    API em Node.js para receber leads de formulários a partir do Meta ADS e Google ADS para futuras campanhas de marketing.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: JavaScript e Node.JS.
+                </p>
+                <div class="flex gap-4">
+                    <button class="gradient-gray-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </button>
+                    <a href="https://github.com/1leofernandes/LeadsAPI" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+            <!-- CARD 8 -->
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="webscraping.svg" alt="Landing Page SaaS" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Web Scraping</h3>
+                <p class="text-gray-600 mb-4">
+                    Projeto de web scraping para coletar dados de sites (inicialmente Mercado Livre) e armazená-los para análise posterior.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: Python, BeautifulSoup, Requests, Pandas.
+                </p>
+                <div class="flex gap-4">
+                    <button class="gradient-gray-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </button>
+                    <a href="https://github.com/1leofernandes/mercadolivre-web-scraping" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contact" class="py-24 w-11/12 mx-auto relative z-10" data-aos="fade-up">
+        <h2 class="text-3xl font-poppins font-bold mb-6 gradient-text">Contato</h2>
+
+        <p class="text-gray-700 mb-6">Fale diretamente comigo para projetos, oportunidades ou parcerias.</p>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            <form action="mailto:seuemail@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                <input type="text" name="name" placeholder="Seu Nome" class="w-full p-3 bg-light2 border border-light3 rounded-xl focus:border-primary1 outline-none text-darkText" required>
+                <input type="email" name="email" placeholder="Seu E-mail" class="w-full p-3 bg-light2 border border-light3 rounded-xl focus:border-primary1 outline-none text-darkText" required>
+                <textarea name="message" placeholder="Sua Mensagem" rows="5" class="w-full p-3 bg-light2 border border-light3 rounded-xl focus:border-primary1 outline-none text-darkText" required></textarea>
+                <button type="submit" class="gradient-bg px-8 py-3 rounded-xl font-medium glow hover:scale-105 transition-transform text-white">Enviar Mensagem</button>
+            </form>
+
+            <div class="space-y-4">
+                <a href="https://wa.me/5562984894774" class="flex items-center gap-4 p-4 bg-light2 rounded-xl border border-primary1/20 hover:border-primary1 transition card-hover">
+                    <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:leonardoff24@gmail.com" class="flex items-center gap-4 p-4 bg-light2 rounded-xl border border-primary1/20 hover:border-primary1 transition card-hover">
+                    <i class="fas fa-envelope text-primary1 text-2xl"></i>
+                    <span>E-mail</span>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-fernandes-9570202bb/" class="flex items-center gap-4 p-4 bg-light2 rounded-xl border border-primary1/20 hover:border-primary1 transition card-hover">
+                    <i class="fab fa-linkedin text-blue-500 text-2xl"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-gray-600 border-t border-light3 relative z-10">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="https://github.com/1leofernandes" class="text-gray-600 hover:text-primary1 transition"><i class="fab fa-github text-2xl"></i></a>
+            <a href="https://www.linkedin.com/in/leonardo-fernandes-9570202bb/" class="text-gray-600 hover:text-primary1 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="https://wa.me/5562984894774" class="text-gray-600 hover:text-primary1 transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+        </div>
+        © 2025 Leonardo Fernandes — Desenvolvedor de Software
+    </footer>
+
+    <script>
+        AOS.init();
+
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50 },
+                color: { value: '#6F00FF' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 1, direction: 'none', random: true, straight: false, out_mode: 'out' },
+                line_linked: { enable: true, distance: 150, color: '#B600FF', opacity: 0.2, width: 1 }
+            },
+            interactivity: {
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        new Typed('.typed', {
+            strings: ['Desenvolvedor de Software', 'Criador de Experiências Digitais', 'Especialista em Full-Stack'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            showCursor: false
+        });
+    </script>
+
+</body>
+</html>
