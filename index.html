@@ -178,10 +178,10 @@
                     <li><i class="fas fa-database text-blue-500 mr-2"></i> MySQL</li>
                     <li><i class="fas fa-database text-gray-500 mr-2"></i> SQL</li>
                     <li><i class="fas fa-database text-blue-600 mr-2"></i> PostgreSQL</li>
+                    <li><i class="fas fa-database text-orange-500 mr-2"></i> Redis</li>
                     <li><i class="fas fa-chart-line text-gray-500 mr-2"></i> Consultas otimizadas</li>
                     <li><i class="fas fa-chart-line text-gray-500 mr-2"></i> Modelagem de dados</li>
                     <li><i class="fas fa-memory text-gray-500 mr-2"></i> Cache </li>
-                    <li><i class="fas fa-cube text-blue-700 mr-2"></i> DTOs</li>
                 </ul>
             </div>
         </div>
@@ -194,6 +194,26 @@
         <div class="grid md:grid-cols-2 gap-10">
             
             <!-- CARD 1 -->
+
+            <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://consultorio.live/artigos/wp-content/uploads/2020/11/Captura-de-Tela-2020-11-11-as-22.55.41-2-2-1024x576.png" alt="Gym Fit AI" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-semibold font-poppins mb-4">Sistema de Gestão de clínicas de saúde</h3>
+                <p class="text-gray-600 mb-4">
+                    Sistema de gestão para clínicas de saúde desenvolvido com <i>NextJS</i> e <i>NestJS</i> com agenda completa, drag & drop, gestão de pacientes, profissionais de saúde e atendimentos, com interface intuitiva e design moderno. aplicando SOLID em todo o projeto
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Tecnologias: Docker, Next.js, Nest.js, TypeScript, TAILWINDCSS, PostgreSQL, Redis Cache, Axios, Chadcn, Zod, API REST, JWT, BcryptJS, DTOs.
+                </p>
+                <div class="flex gap-4">
+                    <a href=" --- video aqui ---" target="_blank" class="gradient-bg px-6 py-2 rounded-xl text-sm text-white">
+                        Ver Projeto
+                    </a>
+                    <a href="https://github.com/1leofernandes/zscan-test" class="border border-primary1 px-6 py-2 rounded-xl text-sm hover:bg-primary1/20 transition text-primary1">
+                        Código
+                    </a>
+                </div>
+            </div>
+
             <div class="bg-light2 p-6 rounded-2xl border border-primary1/20 hover:border-primary2 transition card-hover glow" data-aos="zoom-in" data-aos-delay="200">
                 <img src="dietaicon.png" alt="Gym Fit AI" class="w-full h-48 object-cover rounded-xl mb-4">
                 <h3 class="text-xl font-semibold font-poppins mb-4">Sistema de Gerar Dietas com IA</h3>
@@ -454,6 +474,27 @@
         © 2025 Leonardo Fernandes — Desenvolvedor de Software
     </footer>
 
+    <!-- MODAL DE VÍDEO -->
+    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-lg z-[9999] hidden items-center justify-center p-4 transition-all duration-300">
+        <div class="relative max-w-4xl w-full bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Botão Fechar -->
+            <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-primary1 transition z-10 bg-black/50 rounded-full w-10 h-10 flex items-center justify-center">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Player de Vídeo -->
+            <video id="projectVideo" class="w-full" controls>
+                <source src="zscan.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            
+            <div class="p-4 bg-black/80 text-white">
+                <h3 class="font-poppins font-semibold">Sistema de Gestão de Clínicas de Saúde</h3>
+                <p class="text-sm text-gray-300">Demonstração do fluxo de cadastro de pacientes (código da agenda completa disponivel em 'Código')</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         AOS.init();
 
@@ -480,6 +521,57 @@
             backSpeed: 30,
             loop: true,
             showCursor: false
+        });
+
+
+         // Pegar elementos do modal
+        const modal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('projectVideo');
+        const closeModalBtn = document.getElementById('closeModal');
+        
+        // Função para abrir modal com vídeo
+        function openVideoModal(videoPath) {
+            videoPlayer.src = videoPath;
+            videoPlayer.load();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Trava o scroll da página
+            videoPlayer.play(); // Começa a tocar automaticamente
+        }
+        
+        // Função para fechar modal
+        function closeVideoModal() {
+            videoPlayer.pause();
+            videoPlayer.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = ''; // Libera o scroll
+        }
+        
+        // Evento para o botão "Ver Projeto" do primeiro card
+        const verProjetoBtn = document.querySelector('#projects .grid > div:first-child .flex a:first-child');
+        if (verProjetoBtn) {
+            verProjetoBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Impede o link de tentar abrir uma URL
+                openVideoModal('zscan.mp4'); // NOME DO SEU ARQUIVO DE VÍDEO
+            });
+        }
+        
+        // Fechar modal ao clicar no X
+        closeModalBtn.addEventListener('click', closeVideoModal);
+        
+        // Fechar modal ao clicar fora do conteúdo
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeVideoModal();
+            }
+        });
+        
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeVideoModal();
+            }
         });
     </script>
 
